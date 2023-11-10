@@ -1,0 +1,24 @@
+    <suite name="Web Automation Suite">
+        <parameter name="url" value="https://www.saucedemo.com/v1/" />
+        <parameter name="browser" value="chrome" />
+        <parameter name="usernameInput" value="standard_user" />
+        <parameter name="passwordInput" value="secret_sauce"/>
+        <test name="Login Test">
+            <classes>
+                <class name="com.globant.tests.SaucedemoTest">
+                    <methods>
+                        <exclude name = "loginTestFluentWait"/>
+                    </methods>
+                </class>
+            </classes>
+        </test>
+        <test name = "Login Test With Data Provider">
+            <classes>
+                <class name = "com.globant.tests.SaucedemoTest">
+                    <methods>
+                        <include name = "loginTestFluentWait"/>
+                    </methods>
+                </class>
+            </classes>
+        </test>
+    </suite>
